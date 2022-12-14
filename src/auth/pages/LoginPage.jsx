@@ -8,9 +8,14 @@ export const LoginPage = () => {
       direction="column"
       alignItems="center"
       justifyContent="center"
-      sx={{minHeight:'100vh', backgroundColor:'primary.main'}}
+      sx={{ minHeight: "100vh", backgroundColor: "primary.main", padding: 4 }}
     >
-      <h1>LoginPage</h1>
+      <Grid
+        item
+        className="box-shadow"
+        xs={3}
+        sx={{ backgroundColor: "white", padding: 3, borderRadius: 2 }}
+      ></Grid>
     </Grid>
   );
 };
