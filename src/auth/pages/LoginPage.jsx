@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid, TextField, Typography } from "@mui/material";
 
 export const LoginPage = () => {
   return (
@@ -15,7 +15,31 @@ export const LoginPage = () => {
         className="box-shadow"
         xs={3}
         sx={{ backgroundColor: "white", padding: 3, borderRadius: 2 }}
-      ></Grid>
+      >
+        <Typography variant="h5" sx={{ mb: 1 }}>
+          Login
+        </Typography>
+        <form>
+          <Grid container>
+            <Grid item xs={12} sx={{ mt: 2 }}>
+              <TextField
+                label="Email"
+                type="email"
+                placeholder="email@domain.com"
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={12} sx={{ mt: 2 }}>
+              <TextField
+                label="Password"
+                type="password"
+                placeholder="password"
+                fullWidth
+              />
+            </Grid>
+          </Grid>
+        </form>
+      </Grid>
     </Grid>
   );
 };
