@@ -1,4 +1,5 @@
-import { Grid, TextField, Typography } from "@mui/material";
+import { Google } from "@mui/icons-material";
+import { Button, Grid, TextField, Typography } from "@mui/material";
 
 export const LoginPage = () => {
   return (
@@ -36,6 +37,22 @@ export const LoginPage = () => {
                 placeholder="password"
                 fullWidth
               />
+            </Grid>
+            <Grid container spacing={2} sx={{ mb: 2 }}>
+              <Grid item xs={12} sm={6}>
+                <Button variant="contained" sx={{ mt: 2 }} fullWidth>
+                  Login
+                </Button>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <Button variant="contained" sx={{ mt: 2 }} fullWidth>
+                  <Google sx={{ mr: 1 }} />
+                  Google
+                </Button>
+              </Grid>
+            </Grid>
+            <Grid container direction="row" justifyContent="end">
+              Create an account
             </Grid>
           </Grid>
         </form>
