@@ -1,10 +1,14 @@
+import { useDispatch } from "react-redux";
 import { Link as RouterLink } from "react-router-dom";
 import { Google } from "@mui/icons-material";
 import { Button, Grid, Link, TextField } from "@mui/material";
 import { AuthLayout } from "../layout/AuthLayout";
 import { useForm } from "../../hooks";
+import { checkingAuthentication, startGoogleSignIn } from "../../store/auth";
 
 export const LoginPage = () => {
+  const dispatch = useDispatch();
+
   const { email, password, onInputChange } = useForm({
     email: "johndoe@mail.com",
     password: "123456",
@@ -13,6 +17,12 @@ export const LoginPage = () => {
   const onSubmit = (event) => {
     event.preventDefault();
     console.log({ email, password });
+    dispatch(checkingAuthentication());
+  };
+
+  const onGoogleSignIn = () => {
+    console.log("---> Google Sign In");
+    dispatch(startGoogleSignIn());
   };
 
   return (
@@ -53,7 +63,12 @@ export const LoginPage = () => {
               </Button>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <Button variant="contained" sx={{ mt: 2 }} fullWidth>
+              <Button
+                variant="contained"
+                sx={{ mt: 2 }}
+                fullWidth
+                onClick={onGoogleSignIn}
+              >
                 <Google sx={{ mr: 1 }} />
                 Google
               </Button>
