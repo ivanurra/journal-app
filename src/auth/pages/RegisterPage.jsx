@@ -11,7 +11,11 @@ const formData = {
 
 const formValidations = {
   email: [(value) => value.includes("@"), "Email must contain @"],
-  password: [(value) => value.length >= 6, "Password must contain at least 6 characters"],
+  password: [
+    (value) => value.length >= 6,
+    "Password must contain at least 6 characters.",
+  ],
+  displayName: [(value) => value.length >= 1, "Name is mandatory."],
 };
 
 export const RegisterPage = () => {
@@ -25,7 +29,7 @@ export const RegisterPage = () => {
     displayNameValid,
     emailValid,
     passwordValid,
-  } = useForm(formData);
+  } = useForm(formData, formValidations);
 
   const onSubmit = (event) => {
     event.preventDefault();
