@@ -8,6 +8,12 @@ export const useForm = (initialForm = {}, formValidations = {}) => {
     createValidator();
   }, [formState]);
 
+  const isFormValid = useMemo(() => {
+    for (const formValue of Object.keys(formValidation)) {
+      
+    }
+  }, [formState]);
+
   const onInputChange = ({ target }) => {
     const { name, value } = target;
     setFormState({
