@@ -43,6 +43,14 @@ export const registerUserWithEmailPassword = async ({
     );
     const { uid, photoURL } = resp.user;
     console.log(resp);
+
+    return {
+      ok: true,
+      uid,
+      photoURL,
+      email,
+      displayName,
+    };
   } catch (error) {
     console.log(error);
     return { ok: false, errorMessage: error.message };
