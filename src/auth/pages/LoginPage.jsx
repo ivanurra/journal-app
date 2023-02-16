@@ -5,7 +5,7 @@ import { Google } from "@mui/icons-material";
 import { Button, Grid, Link, TextField } from "@mui/material";
 import { AuthLayout } from "../layout/AuthLayout";
 import { useForm } from "../../hooks";
-import { checkingAuthentication, startGoogleSignIn } from "../../store/auth";
+import { startGoogleSignIn, startLoginWithEmailPassword } from "../../store/auth";
 
 export const LoginPage = () => {
   const { status } = useSelector((state) => state.auth);
@@ -22,7 +22,7 @@ export const LoginPage = () => {
   const onSubmit = (event) => {
     event.preventDefault();
     // console.log({ email, password });
-    dispatch(checkingAuthentication());
+    dispatch(startLoginWithEmailPassword({email, password}));
   };
   
   const onGoogleSignIn = () => {
