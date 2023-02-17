@@ -64,6 +64,4 @@ export const registerUserWithEmailPassword = async ({
   }
 };
 
-export const loginWithEmailPassword = () => {
-  
-}
+export const loginWithEmailPassword = () => {};
